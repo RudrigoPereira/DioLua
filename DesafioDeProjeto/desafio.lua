@@ -66,22 +66,46 @@ local function getProgressBar(attribute)
     return result
 end
 
+-- função para fazer a parte de cima e a de baixo do cartão
+local function topBottomCard(char, numberChar)
+    local result = ""
+
+    for i = 1, numberChar, 1 do
+        result = result ..char
+    end
+
+    return result
+end
+
+--função para criar as linhas do cartão
+local function cardLine(char, numberSpace, text)
+    local result = char ..' ' ..text
+
+    for i = 1, numberSpace, 1 do
+        if i > string.len(text) then
+            result = result ..' '
+        end
+    end
+
+    return result ..char
+end
+
 -- Cartão
-print('====================================================')
-print('|                                                  |')
-print('| ' ..monsterName .."                                          |")
-print('| ' ..description .." |")
-print('|                                                  |')
-print('| Item: ' ..item .."                                    |")
-print('| Som: ' ..sound .."                                    |")
-print('| Emoji Favorito: ' ..emoji .."                               |")
-print('| Horário Favorito: ' ..favoriteTime .."                        |")
-print('|                                                  |')
-print('| Atributos                                        |')
-print('|    Ataque:       ' ..getProgressBar(attackAttribute) .."            |")
-print('|    Defesa:       ' ..getProgressBar(defenseAttribute) .."            |")
-print('|    Vida:         ' ..getProgressBar(lifeAttribute) .."            |")
-print('|    Velocidade:   ' ..getProgressBar(speedAttribute) .."            |")
-print('|    Inteligência: ' ..getProgressBar(inteligenceAttribute) .."            |")
-print('|                                                  |')
-print('====================================================')
+print(topBottomCard('=', 52))
+print(cardLine('|', 49, ''))
+print(cardLine('|', 49, monsterName))
+print(cardLine('|', 49, description))
+print(cardLine('|', 49, ''))
+print(cardLine('|', 50, 'Item: ' ..item))
+print(cardLine('|', 49, 'Som: ' ..sound))
+print(cardLine('|', 51, 'Emoji Favorito: ' ..emoji))
+print(cardLine('|', 50, 'Horário Favorito: ' ..favoriteTime))
+print(cardLine('|', 49, ''))
+print(cardLine('|', 49, 'Atributos'))
+print(cardLine('|', 59, '    Ataque:       ' ..getProgressBar(attackAttribute)))
+print(cardLine('|', 59, '    Defesa:       ' ..getProgressBar(defenseAttribute)))
+print(cardLine('|', 59, '    Vida:         ' ..getProgressBar(lifeAttribute)))
+print(cardLine('|', 59, '    Velocidade:   ' ..getProgressBar(speedAttribute)))
+print(cardLine('|', 60, '    Inteligência: ' ..getProgressBar(inteligenceAttribute)))
+print(cardLine('|', 49, ''))
+print(topBottomCard('=', 52))
