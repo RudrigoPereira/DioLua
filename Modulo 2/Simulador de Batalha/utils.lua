@@ -71,4 +71,12 @@ function utils.printCreature(creature)
     print("|    Velocidade: " ..utils.getProgressbar(creature.speed))
 end
 
+--- Pergunta ao usuário por um número, que é retornado pela função
+---@return number
+function utils.ask()
+    io.write("> ")
+    local answer = io.read("*n")
+    return answer
+end
+
 return utils
