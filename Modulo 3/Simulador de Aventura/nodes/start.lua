@@ -9,7 +9,7 @@ local Choice = require 'choice'
 local node = Node:new(ID) ---@type Node
 node.title = "Uma nova aventura"
 node.description = "Em uma bela manhã ensolarada você acorda e se prepara para embarcar em uma nova aventura, mas uma importante decisão deve ser tomada. Para onde você vai?"
-node.header = [[
+node.header = [[%{magenta}
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 █░▄▄▀█░▄▀█▀███▀█░▄▄█░▄▄▀█▄░▄█░██░█░▄▄▀█░▄▄████
 █░▀▀░█░█░██░▀░██░▄▄█░██░██░██░██░█░▀▀▄█░▄▄████
@@ -26,14 +26,12 @@ node.header = [[
 
 table.insert(node.choices, Choice:new(
     "kalandra.start",
-    "Para a praia ensolarada de Kalandra",
-    nil
+    "Para a praia ensolarada de Kalandra"
 ))
 
 table.insert(node.choices, Choice:new(
     "nyff.start",
-    "Para aa montanhas geladas de Nyff",
-    nil
+    "Para as montanhas geladas de Nyff"
 ))
 
 return node
